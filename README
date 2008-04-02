@@ -2,6 +2,7 @@ This project is aimed as repository of my scripts I'm using across my systems.
 Maybe somebody may find them (or their parts) usefull.
 
 
+.zshr: mostly on a Mac OS and freebsd, but should be working on any unix
 /*
  * ----------------------------------------------------------------------------
  * "THE BEER-WARE LICENSE" (Revision 42):
