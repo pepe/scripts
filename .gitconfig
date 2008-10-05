@@ -1,0 +1,10 @@
+[user]
+    name = Josef Pospíšil
+    email = pepe@gravastar.cz
+
+[mirror]
+  summary = true
+
+[apply]
+  whitespace = nowarn
+
