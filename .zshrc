@@ -15,7 +15,7 @@ setopt EXTENDED_HISTORY
 cdpath=(.. ~ ~/bin ~/Projects)
 
 ###### Path addiction and exports
-path=($path /opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin ~/Application)
+path=(/opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin ~/Application $path)
 manpath=($X11HOME/man /usr/man /usr/lang/man /usr/local/man /usr/share/man
 /opt/local/man)
 export MANPATH
@@ -26,6 +26,7 @@ export ANT_HOME=/usr/local/ant
 
 ###### Tunnels 
 alias edok_tunnel="ssh -L 3333:edoktorand.czu.cz:3306 -p2222 edoktorand.czu.cz"
+alias edok_www_tunnel="ssh -L 8888:edoktorand.czu.cz:80 -p2222 edoktorand.czu.cz"
 
 ###### GIT
 alias github="open `git config -l | grep 'remote.origin.url' | sed -n 's/remote.origin.url=git@github.com:\(.*\)\/\(.*\).git/https:\/\/github.com\/\1\/\2/p'`"
@@ -38,6 +39,10 @@ alias gipu="git push"
 alias girm="git rm"
 alias gilo="git log"
 alias gife="git fetch"
+alias gimv="git mv"
+alias gibr="git branch"
+alias gibra="git branch -a"
+alias gich="git checkout"
 
 
 ###### Grep source trees
@@ -45,6 +50,7 @@ alias rbfin='find -type f -a \( -name "*.rb" -o -name "*.haml" \) | \
               xargs grep '
              
 ###### Global aliases -- ###### General
+alias gvim='open /Applications/MacVim.app'
 alias mv='nocorrect mv'       # no spelling correction on mv
 alias cp='nocorrect cp'       # no spelling correction on cp
 alias mkdir='nocorrect mkdir' # no spelling correction on mkdir
@@ -76,6 +82,7 @@ alias scs="screen -S "
 alias cgn="ssh champaign.gravastar.cz"
 alias suww="sudo -u www"
 alias suwwb="sudo -u www -b"
+alias start_mysql="sudo -b -u mysql /opt/local/bin/mysqld_safe5"
 
 ###### These do not have to be
 ###### at the beginning of the command line.
@@ -92,6 +99,9 @@ alias rcons="./script/console"
 alias rbrk="./script/breakpointer"
 alias rmig="./script/generate migration"
 alias rkmig="rake db:migrate"
+alias rksp="rake spec"
+alias rksm="rake spec:models"
+alias rksc="rake spec:controllers"
 ###### List only directories and symbolic
 ###### links that point to directories
 alias lsd='ls -ld *(-/DN)'
