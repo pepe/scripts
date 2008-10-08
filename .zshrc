@@ -29,8 +29,8 @@ alias edok_tunnel="ssh -L 3333:edoktorand.czu.cz:3306 -p2222 edoktorand.czu.cz"
 alias edok_www_tunnel="ssh -L 8888:edoktorand.czu.cz:80 -p2222 edoktorand.czu.cz"
 
 ###### GIT
-alias github="open `git config -l | grep 'remote.origin.url' | sed -n 's/remote.origin.url=git@github.com:\(.*\)\/\(.*\).git/https:\/\/github.com\/\1\/\2/p'`"
-alias gitnub="open /Applications/GitNub.app"
+alias gire="git rebase"
+alias gita="git tag"
 alias gist="git status"
 alias gica="git commit -a"
 alias giad="git add"
@@ -93,7 +93,7 @@ alias -g F='|fgrep'
 
 
 ###### rails
-alias rser="./script/server"
+alias rser="./script/server --debugger"
 alias rgen="./script/generate"
 alias rcons="./script/console"
 alias rbrk="./script/breakpointer"

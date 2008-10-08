@@ -15,3 +15,5 @@ nonblock on
 
 hardstatus alwayslastline
 hardstatus string '%{= kw}[ %{= kb}%H%{= kw} ][%= %{= kw}%?%-Lw%?%{= kW}%n*%f %t%?%?%{= kw}%?% +Lw%?%?%= ][ %{r}%l%{w} ]%{w}[%{r} %d/%m/%y %C %A %{w}]%{w}'
+
+bind b eval "writebuf" "exec sh -c 'pbcopy < /tmp/screen-exchange'"
