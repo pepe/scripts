@@ -43,6 +43,7 @@ alias gimv="git mv"
 alias gibr="git branch"
 alias gibra="git branch -a"
 alias gich="git checkout"
+alias gime="git merge"
 
 
 ###### Grep source trees

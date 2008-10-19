@@ -53,7 +53,7 @@ ab ife ifendka
 ab ltg link_to _(''), :5h
 ab mca add_column :, :, :2F:a
 ab mcr remove_column :, :F:a
-ab doe dooendO
+ab do dooendO
 ab prms params[:]i
 
 " html abbreviations"
