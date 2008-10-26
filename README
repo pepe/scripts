@@ -2,14 +2,9 @@ This project is aimed as repository of my scripts I'm using across my systems.
 Maybe somebody may find them (or their parts) usefull.
 
 
-.zshr: mostly on a Mac OS and freebsd, but should be working on any unix
-/*
- * ----------------------------------------------------------------------------
- * "THE BEER-WARE LICENSE" (Revision 42):
- * <pepe@gravastar.cz> wrote this file. As long as you retain this notice you
- * can do whatever you want with this stuff. If we meet some day, and you think
- * this stuff is worth it, you can buy me a beer in return. 
- * Josef 'pepe' Pospisil
- * ----------------------------------------------------------------------------
- */
+"THE BEER-WARE LICENSE" (Revision 42):
+<pepe@gravastar.cz> wrote this file. As long as you retain this notice you
+can do whatever you want with this stuff. If we meet some day, and you think
+this stuff is worth it, you can buy me a beer in return. 
+Josef 'pepe' Pospisil
 
