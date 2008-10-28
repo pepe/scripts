@@ -1,10 +1,3 @@
-
-" THE BEER-WARE LICENSE" (Revision 42):
-" <pepe@gravastar.cz> wrote this file. As long as you retain this notice you
-" can do whatever you want with this stuff. If we meet some day, and you think
-" this stuff is worth it, you can buy me a beer in return. 
-" Josef 'pepe' Pospisil
-"
 set exrc              " Enable .vimrc .gvimrc
 set nocompatible      " We're running Vim, not Vi!
 filetype on           " Enable fieltype detection
@@ -85,3 +78,8 @@ ab itsn it "should "i
 
 iab Idate <C-R>=strftime("%d %B %Y, %X")<CR>
 
+" THE BEER-WARE LICENSE" (Revision 42):
+" <pepe@gravastar.cz> wrote this file. As long as you retain this notice you
+" can do whatever you want with this stuff. If we meet some day, and you think
+" this stuff is worth it, you can buy me a beer in return. 
+" Josef 'pepe' Pospisil

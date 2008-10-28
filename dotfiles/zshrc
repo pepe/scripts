@@ -1,9 +1,3 @@
-# "THE BEER-WARE LICENSE" (Revision 42):
-# <pepe@gravastar.cz> wrote this file. As long as you retain this notice you
-# can do whatever you want with this stuff. If we meet some day, and you think
-# this stuff is worth it, you can buy me a beer in return. 
-# Josef 'pepe' Pospisil
-
 ###### Host-Specific stuff
 if [ -f ~/.zshrc-`hostname` ]; then
   . ~/.zshrc-`hostname`
@@ -69,6 +63,7 @@ alias h=history
 alias grep=egrep
 alias ll='ls -l'
 alias la='ls -a'
+alias lal='ls -al'
 alias nsr='netstat -rn -f inet'
 alias pc='port contents'
 alias pl='port list'
@@ -237,3 +232,8 @@ zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.o' '*?.c~' \
 # ignore completion functions (until the _ignored completer)
 zstyle ':completion:*:functions' ignored-patterns '_*'
 
+# "THE BEER-WARE LICENSE" (Revision 42):
+# <pepe@gravastar.cz> wrote this file. As long as you retain this notice you
+# can do whatever you want with this stuff. If we meet some day, and you think
+# this stuff is worth it, you can buy me a beer in return. 
+# Josef 'pepe' Pospisil
