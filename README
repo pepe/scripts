@@ -1,6 +1,7 @@
 This project is aimed as repository of my scripts I'm using across my systems.
 Maybe somebody may find them (or their parts) usefull.
 
+it's easy to branch it, bend it and install it by rake install
 
 "THE BEER-WARE LICENSE" (Revision 42):
 <pepe@gravastar.cz> wrote this file. As long as you retain this notice you
