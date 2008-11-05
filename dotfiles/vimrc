@@ -41,6 +41,8 @@ imap g _('')F'i
 map g i_('')F'i
 imap e <% end %>
 map e i<% end %>
+imap i <% if %>o<% end %>
+map i i<% if %>o<% end %>
 imap n o 
 map n o '
 map <D-s> :wa<CR>
@@ -48,7 +50,7 @@ imap <D-s> <ESC>:wa<CR>
 
 " coding abbreviations"
 ab dgg debugger
-ab dfm defend<up>O#
+ab dfm defendo<up><up>O#
 ab ife ifendka
 ab ltg link_to _(''), :5h
 ab mca add_column :, :, :2F:a
