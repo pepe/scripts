@@ -59,6 +59,14 @@ unless $0.match(/script\/server$/)
       instance_variable_set('@d', doc)
     end
   end
+
+  # Easily print methods local to an object's class
+  class Object
+    def local_methods
+      (methods - Object.instance_methods).sort
+    end
+  end
+
 end
 
 # "THE BEER-WARE LICENSE" (Revision 42):
