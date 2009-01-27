@@ -10,11 +10,14 @@ set fdc=3             " 3 fold columns
 set foldtext=getline(v:foldstart)
 set wrap		
 set history=1000      " Size of the history
-set backspace=2
+set backspace=indent,eol,start
+set autoread
 set nojoinspaces
+set magic             " Use some magic in search patterns?  Certainly!
 set ruler
-set showcmd
-set showmatch
+set showcmd                     " Show current uncompleted command?  Absolutely!
+set showmatch                   " Show the matching bracket for the last ')'?
+set showmode                    " Show the current mode?  YEEEEEEEEESSSSSSSSSSS!
 set hlsearch
 set autoindent
 set shiftwidth=2
@@ -26,6 +29,16 @@ set ls=2
 set nohlsearch
 set directory=/tmp
 set encoding=utf-8
+set wildmode=list:longest
+set ignorecase 
+set smartcase
+set incsearch                   " Incremental search
+set hlsearch                    " hilight search
+set scrolloff=6
+set shortmess=atI
+
+nnoremap ' `
+nnoremap ` '
 
 nmap <F3> :wa<Bar>exe "mksession! " . v:this_session<CR>
 nmap <F2> :so ~/.sessions/
@@ -41,6 +54,8 @@ imap g _('')F'i
 map g i_('')F'i
 imap e <% end %>
 map e i<% end %>
+imap t #TODO 
+map t i#TODO 
 imap i <% if %>o<% end %>
 map i i<% if %>o<% end %>
 imap n o 
@@ -55,7 +70,7 @@ ab ife ifendka
 ab ltg link_to _(''), :5h
 ab mca add_column :, :, :2F:a
 ab mcr remove_column :, :F:a
-ab do dooendO
+ab doe dooendO
 ab prms params[:]i
 
 " html abbreviations"
