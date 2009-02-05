@@ -1,3 +1,5 @@
+# zgitinit and prompt_wunjo_setup must be somewhere in your $fpath, see README for more.
+
 ###### Host-Specific stuff
 if [ -f ~/.zshrc-`hostname` ]; then
   . ~/.zshrc-`hostname`
@@ -23,6 +25,7 @@ export EDITOR=vim
 export TERMCMD='xterm -rv -wc -132 -fn 10x20'
 export JAVA_HOME=/Library/Java/Home
 export ANT_HOME=/usr/local/ant
+export VISUALWORKS=/Users/pepe/vw7.6nc
 
 ###### Tunnels 
 alias edok_tunnel="ssh -L 3333:edoktorand.czu.cz:3306 -p2222 edoktorand.czu.cz"
@@ -50,6 +53,7 @@ alias gibra="git branch -a"
 alias gich="git checkout"
 alias gichb="git checkout -b"
 alias gichma="git checkout master"
+alias gichpe="git checkout pepe"
 alias gime="git merge"
 alias girs="git reset"
 alias girsh="git reset --hard"
@@ -130,7 +134,7 @@ setenv() { typeset -x "${1}${1:+=}${(@)argv[2,$#]}" }  # csh compatibility
 freload() { while (( $# )); do; unfunction $1; autoload -U $1; shift; done }
 
 # Where to look for autoloaded function definitions
-fpath=($fpath ~/.zfunc)
+fpath=($fpath $HOME/.zsh/func)
 
 # Autoload all shell functions from all directories in $fpath (following
 # symlinks) that have the executable bit on (the executable bit is not
@@ -141,10 +145,14 @@ for func in $^fpath/*(N-.x:t); autoload $func
 # automatically remove duplicates from these arrays
 typeset -U path cdpath fpath manpath
 
+setopt promptsubst
 
-# Set prompts
-PROMPT='%m%# '    # default prompt
-RPROMPT=' %~'     # prompt for right side of screen
+# Load the prompt theme system
+autoload -U promptinit
+promptinit
+
+# Use the wunjo prompt theme
+prompt wunjo
 
 # Some environment variables
 
