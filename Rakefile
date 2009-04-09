@@ -4,9 +4,9 @@ task :install do
   Dir['dotfiles/[a-z]*'].each do |source|
     source = File.expand_path(source)
     target = File.expand_path('~/.' + File.basename(source))
-    puts 'Removing old dot files'
+    puts 'Removing old dot file'
     rm_f target
-    puts 'Linking new ones'
+    puts 'Linking new one'
     symlink source, target
   end
 end
