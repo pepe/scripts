@@ -1,6 +1,6 @@
 " pepe
 
-set guifont=Consolas:h13.00
+set guifont=Anonymous:h12.00
 colorscheme zenburn
 set columns=237
 set lines=64
