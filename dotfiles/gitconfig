@@ -1,10 +1,22 @@
 [user]
-    name = Josef Pospíšil
-    email = pepe@gravastar.cz
-
-[mirror]
-  summary = true
-
-[apply]
-  whitespace = nowarn
+  name = {Josef Pospíšil}
+  email = {pepe@gravastar.cz}
+[color]
+  ui = always
+  diff = auto
+  status = always
+  branch = auto
+  interactive = auto
+[alias]
+  s = status
+  c = commit -a
+  l = log --pretty=format:'%Cred%h%Creset ▹ %Cgreen%s%Creset       [%ar by %an]'
+  b = branch
+[core]
+    excludesfile = /Users/{YOUR USERNAME}/.gitignore
+[merge]
+    stat = true
+[github]
+    token = {54a312287902da47829c7c5329a087c1}
+      user  = {pepe}
 
