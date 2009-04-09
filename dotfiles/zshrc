@@ -1,5 +1,3 @@
-# zgitinit and prompt_wunjo_setup must be somewhere in your $fpath, see README for more.
-
 ###### Host-Specific stuff
 if [ -f ~/.zshrc-`hostname` ]; then
   . ~/.zshrc-`hostname`
@@ -45,7 +43,7 @@ alias gidi="git diff"
 alias gips="git push"
 alias gipl="git pull"
 alias girm="git rm"
-alias gilo="git log"
+alias gilo="git l"
 alias gife="git fetch"
 alias gimv="git mv"
 alias gibr="git branch"
@@ -60,6 +58,7 @@ alias girsh="git reset --hard"
 alias girss="git reset --soft"
 alias girsl="git reset --soft 'HEAD^'"
 alias gibl="git blame"
+alias gisb="git submodule"
 
 
 ###### Grep source trees
@@ -151,12 +150,16 @@ setopt promptsubst
 autoload -U promptinit
 promptinit
 
-# Use the wunjo prompt theme
-prompt wunjo
+# http://www.simplisticcomplexity.com/2008/03/13/show-your-git-branch-name-in-your-prompt/
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
+}
+function precmd() { PROMPT='%n@%m$(parse_git_branch)%\▹ ' }
+RPROMPT=" %~"
+    # default prompt
 
 # Some environment variables
 
-export LESS=-cex3M
 export HELPDIR=/usr/local/lib/zsh/help  # directory for run-help function to find docs
 
 MAILCHECK=300
