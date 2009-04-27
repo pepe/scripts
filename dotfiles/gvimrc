@@ -1,7 +1,7 @@
 " pepe
 
 set guifont=Anonymous:h12.00
-colorscheme zenburn
+colorscheme xoria256
 set columns=237
 set lines=64
 
