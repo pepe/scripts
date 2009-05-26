@@ -4,9 +4,18 @@ task :install do
   Dir['dotfiles/[a-z]*'].each do |source|
     source = File.expand_path(source)
     target = File.expand_path('~/.' + File.basename(source))
-    puts 'Removing old dot file'
+    puts 'Removing old dot file ' + target
+
     rm_f target
-    puts 'Linking new one'
+    puts 'Linking new one ' + source
+    symlink source, target
+  end
+  Dir['snippets/*'].each do |source|
+    source = File.expand_path(source)
+    target = File.expand_path('~/.vim/snippets/' + File.basename(source))
+    puts 'Removing old snippet ' + target
+    rm_f target
+    puts 'Linking new one ' + source
     symlink source, target
   end
 end

@@ -52,46 +52,11 @@ imap h <%=h  %>F%hi
 map h i<%=h  %>F%hi
 imap g _('')F'i
 map g i_('')F'i
-imap e <% end %>
-map e i<% end %>
-imap t #TODO 
-map t i#TODO 
-imap i <% if %>o<% end %>
-map i i<% if %>o<% end %>
 imap n o 
 map n o '
 map <D-s> :wa<CR>
 imap <D-s> <ESC>:wa<CR>
 
-" coding abbreviations"
-ab dgg debugger
-ab dfm defendo<up><up>O#
-ab ife ifendka
-ab ltg link_to _(''), :5h
-ab mca add_column :, :, :2F:a
-ab mcr remove_column :, :F:a
-ab doe doiendO
-ab prms params[:]i
-
-" html abbreviations"
-ab hh1 <h1></h1>F>a
-ab hh2 <h2></h2>F>a
-ab hh3 <h3></h3>F>a
-ab hh4 <h4></h4>F>a
-ab hh5 <h5></h5>F>a
-ab hul <ul></ul>F>a
-ab hli <li></li>F>a
-ab hdi <div></div>F<i
-ab hdc <div></div>2F>i
-ab hbr <br />
-ab hth <th></th>F<i
-ab htd <td></td>F<i
-ab hb <b></b>F<i
-ab hp <p></p>F<i
-
-"rspec"
-ab itsh it "should"a dooend?shouldea
-ab itsp it "should"i
 
 iab Idate <C-R>=strftime("%d %B %Y, %X")<CR>
 
@@ -110,30 +75,30 @@ function! ExtractMethod() range
   normal! j0w
 endfunction
 
-   let g:FuzzyFinderOptions = { 'Base':{}, 'Buffer':{}, 'File':{}, 'Dir':{}, 'MruFile':{}, 'MruCmd':{}, 'FavFile':{}, 'Tag':{}, 'TaggedFile':{}}
-   let g:FuzzyFinderOptions.Base.ignore_case = 1
-   let g:FuzzyFinderOptions.Base.abbrev_map  = {
-         \   '\C^VR' : [
-         \     '$VIMRUNTIME/**',
-         \     '~/.vim/**',
-         \     '$VIM/.vim/**',
-         \     '$VIM/vimfiles/**',
-         \   ],
-         \ }
-   let g:FuzzyFinderOptions.MruFile.max_item = 200
-   let g:FuzzyFinderOptions.MruCmd.max_item = 200
-   nnoremap <silent> <C-n>      :FuzzyFinderBuffer<CR>
-   nnoremap <silent> <C-m>      :FuzzyFinderFile <C-r>=expand('%:~:.')[:-1-len(expand('%:~:.:t'))]<CR><CR>
-   nnoremap <silent> <C-j>      :FuzzyFinderMruFile<CR>
-   nnoremap <silent> <C-k>      :FuzzyFinderMruCmd<CR>
-   nnoremap <silent> <C-p>      :FuzzyFinderDir <C-r>=expand('%:p:~')[:-1-len(expand('%:p:~:t'))]<CR><CR>
-   nnoremap <silent> <C-f><C-d> :FuzzyFinderDir<CR>
-   nnoremap <silent> <C-f><C-f> :FuzzyFinderFavFile<CR>
-   nnoremap <silent> <C-f><C-t> :FuzzyFinderTag!<CR>
-   nnoremap <silent> <C-f><C-g> :FuzzyFinderTaggedFile<CR>
-   noremap  <silent> g]         :FuzzyFinderTag! <C-r>=expand('<cword>')<CR><CR>
-   nnoremap <silent> <C-f>F     :FuzzyFinderAddFavFile<CR>
-   nnoremap <silent> <C-f><C-e> :FuzzyFinderEditInfo<CR>
+let g:FuzzyFinderOptions = { 'Base':{}, 'Buffer':{}, 'File':{}, 'Dir':{}, 'MruFile':{}, 'MruCmd':{}, 'FavFile':{}, 'Tag':{}, 'TaggedFile':{}}
+let g:FuzzyFinderOptions.Base.ignore_case = 1
+let g:FuzzyFinderOptions.Base.abbrev_map  = {
+     \   '\C^VR' : [
+     \     '$VIMRUNTIME/**',
+     \     '~/.vim/**',
+     \     '$VIM/.vim/**',
+     \     '$VIM/vimfiles/**',
+     \   ],
+     \ }
+let g:FuzzyFinderOptions.MruFile.max_item = 200
+let g:FuzzyFinderOptions.MruCmd.max_item = 200
+nnoremap <silent> <C-n>      :FuzzyFinderBuffer<CR>
+nnoremap <silent> <C-m>      :FuzzyFinderFile <C-r>=expand('%:~:.')[:-1-len(expand('%:~:.:t'))]<CR><CR>
+nnoremap <silent> <C-j>      :FuzzyFinderMruFile<CR>
+nnoremap <silent> <C-k>      :FuzzyFinderMruCmd<CR>
+nnoremap <silent> <C-p>      :FuzzyFinderDir <C-r>=expand('%:p:~')[:-1-len(expand('%:p:~:t'))]<CR><CR>
+nnoremap <silent> <C-f><C-d> :FuzzyFinderDir<CR>
+nnoremap <silent> <C-f><C-f> :FuzzyFinderFavFile<CR>
+nnoremap <silent> <C-f><C-t> :FuzzyFinderTag!<CR>
+nnoremap <silent> <C-f><C-g> :FuzzyFinderTaggedFile<CR>
+noremap  <silent> g]         :FuzzyFinderTag! <C-r>=expand('<cword>')<CR><CR>
+nnoremap <silent> <C-f>F     :FuzzyFinderAddFavFile<CR>
+nnoremap <silent> <C-f><C-e> :FuzzyFinderEditInfo<CR>
 
 
 " THE BEER-WARE LICENSE" (Revision 42):
