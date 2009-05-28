@@ -36,6 +36,8 @@ set incsearch                   " Incremental search
 set hlsearch                    " hilight search
 set scrolloff=6
 set shortmess=atI
+set laststatus=2
+set statusline=>%{GitBranch()}<
 
 nnoremap ' `
 nnoremap ` '
