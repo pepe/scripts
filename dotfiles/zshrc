@@ -40,6 +40,7 @@ alias gicam="git commit -am"
 alias gico="git commit"
 alias giad="git add"
 alias gidi="git diff"
+alias gidich="git diff --cached"
 alias gips="git push"
 alias gipl="git pull"
 alias girm="git rm"
@@ -66,7 +67,6 @@ alias rbfin='find -type f -a \( -name "*.rb" -o -name "*.haml" \) | \
               xargs grep '
              
 ###### Global aliases -- ###### General
-alias gvim='open /Applications/MacVim.app'
 alias mv='nocorrect mv'       # no spelling correction on mv
 alias cp='nocorrect cp'       # no spelling correction on cp
 alias mkdir='nocorrect mkdir' # no spelling correction on mkdir
@@ -101,6 +101,7 @@ alias cgn="ssh champaign.gravastar.cz"
 alias suww="sudo -u www"
 alias suwwb="sudo -u www -b"
 alias start_mysql="sudo -b -u mysql /opt/local/bin/mysqld_safe5"
+alias ogitx='open -a GitX '
 
 ###### These do not have to be
 ###### at the beginning of the command line.
