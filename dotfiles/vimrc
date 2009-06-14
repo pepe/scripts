@@ -1,9 +1,6 @@
 set exrc              " Enable .vimrc .gvimrc
 set nocompatible      " We're running Vim, not Vi!
-filetype on           " Enable fieltype detection
-syntax on             " Enable syntax highlighting
-filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific plugins
+set cmdheight=2
 set fen               " Folding enabled
 set fdm=syntax        " Fold mode to syntax
 set fdc=3             " 3 fold columns
@@ -38,6 +35,14 @@ set scrolloff=6
 set shortmess=atI
 set laststatus=2
 set statusline=>%{GitBranch()}<
+
+syntax on             " Enable syntax highlighting
+filetype on           " Enable fieltype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+
+compiler rubyunit
+nmap <Leader>fd :cf /tmp/autotest.txt<cr> :compiler rubyunit<cr>
 
 nnoremap ' `
 nnoremap ` '

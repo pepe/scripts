@@ -1,3 +1,92 @@
+###### GIT
+alias gire="git rebase"
+alias girie="git rebase -i"
+alias girema="git rebase master"
+alias girepe="git rebase pepe"
+alias gita="git tag"
+alias gist="git status"
+alias gica="git commit -a"
+alias gicam="git commit -am"
+alias gico="git commit"
+alias giad="git add"
+alias gidi="git diff"
+alias gidich="git diff --cached"
+alias gips="git push"
+alias gipl="git pull"
+alias girm="git rm"
+alias gilo="git l"
+alias gife="git fetch"
+alias gimv="git mv"
+alias gibr="git branch"
+alias gibra="git branch -a"
+alias gich="git checkout"
+alias gichb="git checkout -b"
+alias gichma="git checkout master"
+alias gichpe="git checkout pepe"
+alias gime="git merge"
+alias gimepe="git merge pepe"
+alias girs="git reset"
+alias girsh="git reset --hard"
+alias girss="git reset --soft"
+alias girsl="git reset --soft 'HEAD^'"
+alias gibl="git blame"
+alias gisb="git submodule"
+alias gista="git stash"
+             
+###### Global aliases -- ###### General
+alias mv='nocorrect mv'       # no spelling correction on mv
+alias cp='nocorrect cp'       # no spelling correction on cp
+alias mkdir='nocorrect mkdir' # no spelling correction on mkdir
+alias j=jobs
+alias pu=pushd
+alias po=popd
+alias d='dirs -v'
+alias h=history
+alias grep=egrep
+alias ll='ls -l'
+alias la='ls -a'
+alias lal='ls -al'
+alias nsr='netstat -rn -f inet'
+alias pc='port contents'
+alias pl='port list'
+alias o=less
+alias scr="screen -r"
+alias scl="screen -list"
+alias scs="screen -t server -S "
+alias scss="screen -t cons;screen -t spec;screen -t git;"
+alias suww="sudo -u www"
+alias suwwb="sudo -u www -b"
+alias start_mysql="sudo -b -u mysql /opt/local/bin/mysqld_safe5"
+alias ogx="open -a GitX"
+
+###### These do not have to be
+###### at the beginning of the command line.
+alias -g M='|less'
+alias -g H='|head'
+alias -g T='|tail'
+alias -g F='|fgrep'
+
+
+###### rails
+alias rser="./script/server --debugger"
+alias rgen="./script/generate"
+alias rcons="./script/console"
+alias rmig="./script/generate migration"
+alias rkmig="rake db:migrate"
+alias rksp="rake spec"
+alias rksm="rake spec:models"
+alias rksc="rake spec:controllers"
+alias raspec="./script/autospec"
+alias clirb="irb -rrestclient -rostruct -rjson"
+
+###### List only directories and symbolic
+###### links that point to directories
+alias lsd='ls -ld *(-/DN)'
+
+###### List only file beginning with "."
+alias lsa='ls -ld .*'
+
+
 ###### Host-Specific stuff
 if [ -f ~/.zshrc-`hostname` ]; then
   . ~/.zshrc-`hostname`
@@ -25,110 +114,10 @@ export JAVA_HOME=/Library/Java/Home
 export ANT_HOME=/usr/local/ant
 export VISUALWORKS=/Users/pepe/vw7.6nc
 
-###### Tunnels 
-alias edok_tunnel="ssh -L 3333:edoktorand.czu.cz:3306 -p2222 edoktorand.czu.cz"
-alias edok_www_tunnel="ssh -L 8888:edoktorand.czu.cz:80 -p2222 edoktorand.czu.cz"
-
-###### GIT
-alias gire="git rebase"
-alias girie="git rebase -i"
-alias girema="git rebase master"
-alias gita="git tag"
-alias gist="git status"
-alias gica="git commit -a"
-alias gicam="git commit -am"
-alias gico="git commit"
-alias giad="git add"
-alias gidi="git diff"
-alias gidich="git diff --cached"
-alias gips="git push"
-alias gipl="git pull"
-alias girm="git rm"
-alias gilo="git l"
-alias gife="git fetch"
-alias gimv="git mv"
-alias gibr="git branch"
-alias gibra="git branch -a"
-alias gich="git checkout"
-alias gichb="git checkout -b"
-alias gichma="git checkout master"
-alias gichpe="git checkout pepe"
-alias gime="git merge"
-alias girs="git reset"
-alias girsh="git reset --hard"
-alias girss="git reset --soft"
-alias girsl="git reset --soft 'HEAD^'"
-alias gibl="git blame"
-alias gisb="git submodule"
-
 
 ###### Grep source trees
 alias rbfin='find -type f -a \( -name "*.rb" -o -name "*.haml" \) | \
               xargs grep '
-             
-###### Global aliases -- ###### General
-alias mv='nocorrect mv'       # no spelling correction on mv
-alias cp='nocorrect cp'       # no spelling correction on cp
-alias mkdir='nocorrect mkdir' # no spelling correction on mkdir
-alias j=jobs
-alias pu=pushd
-alias po=popd
-alias d='dirs -v'
-alias h=history
-alias grep=egrep
-alias ll='ls -l'
-alias la='ls -a'
-alias lal='ls -al'
-alias nsr='netstat -rn -f inet'
-alias pc='port contents'
-alias pl='port list'
-alias o=less
-alias svt="svn status M"
-alias svd="svn diff M"
-alias svdf="svn diff "
-alias sva="svn add"
-alias svc="svn commit --message"
-alias svu="svn update && svl"
-alias svl="svn log M"
-alias svr="svn revert"
-alias svs="svn resolved"
-alias svm="svn merge"
-alias scr="screen -r"
-alias scl="screen -list"
-alias scs="screen -t server -S "
-alias scss="screen -t cons;screen -t spec;screen -t git;"
-alias cgn="ssh champaign.gravastar.cz"
-alias suww="sudo -u www"
-alias suwwb="sudo -u www -b"
-alias start_mysql="sudo -b -u mysql /opt/local/bin/mysqld_safe5"
-alias ogitx='open -a GitX '
-
-###### These do not have to be
-###### at the beginning of the command line.
-alias -g M='|less'
-alias -g H='|head'
-alias -g T='|tail'
-alias -g F='|fgrep'
-
-
-###### rails
-alias rser="./script/server --debugger"
-alias rgen="./script/generate"
-alias rcons="./script/console"
-alias rmig="./script/generate migration"
-alias rkmig="rake db:migrate"
-alias rksp="rake spec"
-alias rksm="rake spec:models"
-alias rksc="rake spec:controllers"
-alias raspec="./script/autospec"
-
-###### List only directories and symbolic
-###### links that point to directories
-alias lsd='ls -ld *(-/DN)'
-
-###### List only file beginning with "."
-alias lsa='ls -ld .*'
-
 ###### Shell functions
 setenv() { typeset -x "${1}${1:+=}${(@)argv[2,$#]}" }  # csh compatibility
 freload() { while (( $# )); do; unfunction $1; autoload -U $1; shift; done }

@@ -19,4 +19,6 @@
 [github]
     token = {54a312287902da47829c7c5329a087c1}
       user  = {pepe}
+[push]
+  default = matching
 

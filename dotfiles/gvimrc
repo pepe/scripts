@@ -1,17 +1,16 @@
 " pepe
 
-set guifont=Inconsolata:h16.00
+set guifont=Inconsolata:h17.00
 colorscheme xoria256
-set columns=237
+set columns=176
 set lines=64
 
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Define mac-standard menu items and keyboard shortcuts.
 
-" THE BEER-WARE LICENSE" (Revision 42):
-" <pepe@gravastar.cz> wrote this file. As long as you retain this notice you
-" can do whatever you want with this stuff. If we meet some day, and you think
-" this stuff is worth it, you can buy me a beer in return. 
-" Josef 'pepe' Pospisil
+"" THE BEER-WARE LICENSE" (Revision 42):
+"" <pepe@gravastar.cz> wrote this file. As long as you retain this notice you
+"" can do whatever you want with this stuff. If we meet some day, and you think
+"" this stuff is worth it, you can buy me a beer in return. 
+"" Josef 'pepe' Pospisil
