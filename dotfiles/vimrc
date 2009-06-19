@@ -34,7 +34,7 @@ set hlsearch                    " hilight search
 set scrolloff=6
 set shortmess=atI
 set laststatus=2
-set statusline=>%{GitBranch()}<
+set statusline=@%{GitBranch()}\ %F%m%r%h%w\ %Y\ %03l,%03v\ %L
 
 syntax on             " Enable syntax highlighting
 filetype on           " Enable fieltype detection
@@ -47,8 +47,8 @@ nmap <Leader>fd :cf /tmp/autotest.txt<cr> :compiler rubyunit<cr>
 nnoremap ' `
 nnoremap ` '
 
-nmap <F3> :wa<Bar>exe "mksession! " . v:this_session<CR>
-nmap <F2> :so ~/.sessions/
+nmap <F3> :SessionSave<CR>
+nmap <F2> :SessionList<CR>
 
 map <TAB> za
 imap r <%  %>F%hi
