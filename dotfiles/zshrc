@@ -144,7 +144,7 @@ promptinit
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
 }
-function precmd() { PROMPT='%n@%m$(parse_git_branch)%\▹ ' }
+function precmd() { PROMPT='%n@%m$(parse_git_branch)%% ' }
 RPROMPT=" %~"
     # default prompt
 
