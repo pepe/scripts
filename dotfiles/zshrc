@@ -15,6 +15,7 @@ alias gips="git push"
 alias gipl="git pull"
 alias girm="git rm"
 alias gilo="git l"
+alias gilog="git l --graph"
 alias gife="git fetch"
 alias gimv="git mv"
 alias gibr="git branch"
@@ -23,8 +24,10 @@ alias gich="git checkout"
 alias gichb="git checkout -b"
 alias gichma="git checkout master"
 alias gichpe="git checkout pepe"
+alias gichde="git checkout deploy"
 alias gime="git merge"
 alias gimepe="git merge pepe"
+alias gisqme="git merge --squash"
 alias girs="git reset"
 alias girsh="git reset --hard"
 alias girss="git reset --soft"
@@ -68,16 +71,15 @@ alias -g F='|fgrep'
 
 
 ###### rails
-alias rser="./script/server --debugger"
-alias rgen="./script/generate"
-alias rcons="./script/console"
-alias rmig="./script/generate migration"
-alias rkmig="rake db:migrate"
-alias rksp="rake spec"
-alias rksm="rake spec:models"
-alias rksc="rake spec:controllers"
-alias raspec="./script/autospec"
-alias clirb="irb -rrestclient -rostruct -rjson"
+alias ss="./script/server --debugger"
+alias sg="./script/generate"
+alias sc="./script/console"
+alias sgm="./script/generate migration"
+alias rmig="rake db:migrate"
+alias rs="rake spec"
+alias rsm="rake spec:models"
+alias rsc="rake spec:controllers"
+alias sa="./script/autospec"
 
 ###### List only directories and symbolic
 ###### links that point to directories
@@ -101,10 +103,10 @@ setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
  
 ###### Search path for the cd command
-cdpath=(.. ~ ~/bin ~/Projects)
+cdpath=(.. ~ ~/Projects)
 
 ###### Path addiction and exports
-path=(/opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin ~/Application $path)
+path=(/opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin ~/Application ~/bin $path)
 manpath=($X11HOME/man /usr/man /usr/lang/man /usr/local/man /usr/share/man
 /opt/local/man)
 export MANPATH
