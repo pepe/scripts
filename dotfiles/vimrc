@@ -1,3 +1,4 @@
+set columns=160
 set exrc              " Enable .vimrc .gvimrc
 set nocompatible      " We're running Vim, not Vi!
 set cmdheight=2
