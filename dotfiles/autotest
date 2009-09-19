@@ -1,5 +1,5 @@
 require 'autotest/fsevent'
-#require 'autotest/restart'
+require 'autotest/restart'
 #Autotest.add_hook :initialize do |at|
 #  at.unit_diff = 'cat'
 #end
