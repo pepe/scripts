@@ -1,8 +1,10 @@
 ###### GIT
+alias gicl="git clone"
 alias gire="git rebase"
 alias girie="git rebase -i"
 alias girema="git rebase master"
 alias girepe="git rebase pepe"
+alias gire="git rebase --continue"
 alias gita="git tag"
 alias gist="git status"
 alias gica="git commit -a"
@@ -16,7 +18,6 @@ alias gipl="git pull"
 alias girm="git rm"
 alias gilo="git l"
 alias gilog="git l --graph"
-alias gife="git fetch"
 alias gimv="git mv"
 alias gibr="git branch"
 alias gibra="git branch -a"
@@ -29,13 +30,15 @@ alias gime="git merge"
 alias gimepe="git merge pepe"
 alias gisqme="git merge --squash"
 alias girs="git reset"
-alias girsh="git reset --hard"
+alias girshaard="git reset --hard"
 alias girss="git reset --soft"
 alias girsl="git reset --soft 'HEAD^'"
 alias gibl="git blame"
 alias gisb="git submodule"
 alias gista="git stash"
-             
+alias gistap="git stash pop"
+alias gish="git show"
+
 ###### Global aliases -- ###### General
 alias mv='nocorrect mv'       # no spelling correction on mv
 alias cp='nocorrect cp'       # no spelling correction on cp
@@ -70,7 +73,7 @@ alias -g T='|tail'
 alias -g F='|fgrep'
 
 
-###### rails
+###### ruby
 alias ss="./script/server --debugger"
 alias sg="./script/generate"
 alias sc="./script/console"
@@ -80,6 +83,7 @@ alias rs="rake spec"
 alias rsm="rake spec:models"
 alias rsc="rake spec:controllers"
 alias sa="./script/autospec"
+alias s64gem='sudo env ARCHFLAGS="-arch x86_64" gem'
 
 ###### List only directories and symbolic
 ###### links that point to directories
@@ -106,7 +110,8 @@ setopt EXTENDED_HISTORY
 cdpath=(.. ~ ~/Projects)
 
 ###### Path addiction and exports
-path=(/opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin ~/Application ~/bin $path)
+path=(/opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin
+~/Application ~/bin $path)
 manpath=($X11HOME/man /usr/man /usr/lang/man /usr/local/man /usr/share/man
 /opt/local/man)
 export MANPATH
