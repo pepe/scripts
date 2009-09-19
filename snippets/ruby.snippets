@@ -284,6 +284,10 @@ snippet sel
 snippet lam
 	lambda { |${1:args}| ${2} }
 snippet do
+	do
+		${1}
+	end
+snippet dov
 	do |${1:variable}|
 		${2}
 	end
@@ -427,4 +431,8 @@ snippet post
 	end
 snippet todo
 	#TODO ${1:what to do}
+snippet describe
+	describe "${1:Part}" do
+		${2}
+	end
 end
