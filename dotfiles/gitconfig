@@ -12,13 +12,14 @@
   c = commit -a
   l = log --pretty=format:'%Cred%h%Creset ▹ %Cgreen%s%Creset       [%ar by %an]'
   b = branch
+  out = log origin..HEAD
 [core]
     excludesfile = /Users/{YOUR USERNAME}/.gitignore
 [merge]
     stat = true
 [github]
-    token = {54a312287902da47829c7c5329a087c1}
-      user  = {pepe}
+	token = 54a312287902da47829c7c5329a087c1
+	user = pepe
 [push]
   default = matching
 
