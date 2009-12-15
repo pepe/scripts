@@ -1,4 +1,3 @@
-set columns=176
 set exrc              " Enable .vimrc .gvimrc
 set nocompatible      " We're running Vim, not Vi!
 set cmdheight=2
@@ -27,7 +26,7 @@ set ls=2
 set nohlsearch
 set directory=/tmp
 set encoding=utf-8
-set wildmode=list:longest
+set wildmode=list:longest,full
 set ignorecase 
 set smartcase
 set incsearch                   " Incremental search
@@ -35,7 +34,8 @@ set hlsearch                    " hilight search
 set scrolloff=6
 set shortmess=atI
 set laststatus=2
-set statusline=@%{SyntasticStatuslineFlag()}%{GitBranch()}\ %F%m%r%h%w\ %Y\ %03l,%03v\ %L
+set statusline=@%{GitBranch()}\ %F%m%r%h%w\ %Y\ %03l,%03v\ %L
+set number
 
 syntax on             " Enable syntax highlighting
 filetype on           " Enable fieltype detection
@@ -60,33 +60,24 @@ imap g _('')F'i
 map g i_('')F'i
 imap n o 
 map n o '
+" Sessions
 noremap <silent> <C-s> :wa<CR>:SessionSave<CR>
 nmap <C-s>r :SessionSave<CR>:SessionClose<CR>:SessionList<CR>/
 nmap <C-s>o :SessionList<CR>/
-nmap <C-s>w :SessionClose<CR>/
+nmap <C-s>w :SessionSave<CR>:SessionClose<CR>:q!<CR>
 imap jk <ESC>
 " Window movements; 
 nnoremap <M-Right> <C-W><Right>
 nnoremap <M-Left> <C-W><Left>
 nnoremap <M-Up> <C-W><Up>
 nnoremap <M-Down> <C-W><Down>
-
-
-iab Idate <C-R>=strftime("%d %B %Y, %X")<CR>
-vmap \em :call ExtractMethod()<CR>
-function! ExtractMethod() range
-  let name = inputdialog("Name of new method:")
-  '<
-  exe "normal! O\<BS>def " . name ."()\<CR>\<Esc>"
-  '>
-  exe "normal! oreturn \<CR>end\<Esc>k"
-  s/return/\/\/ return/ge
-  normal! j%
-  normal! kf(
-  exe "normal! yyPi// = \<Esc>wdwA;\<Esc>"
-  normal! ==
-  normal! j0w
-endfunction
+inoremap <expr> <c-n> pumvisible() ? "\<lt>c-n>" : "\<lt>c-n>\<lt>c-r>=pumvisible() ? \"\\<lt>down>\" : \"\"\<lt>cr>"
+inoremap <expr> <m-;> pumvisible() ? "\<lt>c-n>" : "\<lt>c-x>\<lt>c-o>\<lt>c-n>\<lt>c-p>\<lt>c-r>=pumvisible() ? \"\\<lt>down>\" : \"\"\<lt>cr>"
+" Not by whole lines
+nnoremap <silent> k gk
+nnoremap <silent> j gj
+inoremap <silent> <Up> <Esc>gka
+inoremap <silent> <Down> <Esc>gja
 
 let g:FuzzyFinderOptions = { 'Base':{}, 'Buffer':{}, 'File':{}, 'Dir':{}, 'MruFile':{}, 'MruCmd':{}, 'FavFile':{}, 'Tag':{}, 'TaggedFile':{}}
 let g:FuzzyFinderOptions.Base.ignore_case = 1
@@ -112,7 +103,6 @@ nnoremap <silent> <C-f><C-g> :FuzzyFinderTaggedFile<CR>
 noremap  <silent> g]         :FuzzyFinderTag! <C-r>=expand('<cword>')<CR><CR>
 nnoremap <silent> <C-f>F     :FuzzyFinderAddFavFile<CR>
 nnoremap <silent> <C-f><C-e> :FuzzyFinderEditInfo<CR>
-
 
 " THE BEER-WARE LICENSE" (Revision 42):
 " <pepe@gravastar.cz> wrote this file. As long as you retain this notice you
