@@ -44,6 +44,7 @@ filetype plugin on    " Enable filetype-specific plugins
 
 compiler rubyunit
 nmap <Leader>fd :cf /tmp/autotest.txt<cr> :compiler rubyunit<cr>
+cmap w!! %!sudo tee > /dev/null %
 
 nnoremap ' `
 nnoremap ` '
@@ -103,6 +104,21 @@ nnoremap <silent> <C-f><C-g> :FuzzyFinderTaggedFile<CR>
 noremap  <silent> g]         :FuzzyFinderTag! <C-r>=expand('<cword>')<CR><CR>
 nnoremap <silent> <C-f>F     :FuzzyFinderAddFavFile<CR>
 nnoremap <silent> <C-f><C-e> :FuzzyFinderEditInfo<CR>
+
+" javascript folding
+function! JavaScriptFold() 
+    setl foldmethod=syntax
+    setl foldlevelstart=1
+    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
+
+    function! FoldText()
+        return substitute(getline(v:foldstart), '{.*', '{...}', '')
+    endfunction
+    setl foldtext=FoldText()
+endfunction
+au FileType javascript call JavaScriptFold()
+au FileType javascript setl fen
+
 
 " THE BEER-WARE LICENSE" (Revision 42):
 " <pepe@gravastar.cz> wrote this file. As long as you retain this notice you
