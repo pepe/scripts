@@ -38,8 +38,9 @@ alias gisb="git submodule"
 alias gista="git stash"
 alias gistap="git stash pop"
 alias gish="git show"
+alias ogx="open -a GitX"
 
-###### Global aliases -- ###### General
+###### Global aliases 
 alias mv='nocorrect mv'       # no spelling correction on mv
 alias cp='nocorrect cp'       # no spelling correction on cp
 alias mkdir='nocorrect mkdir' # no spelling correction on mkdir
@@ -53,17 +54,15 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lal='ls -al'
 alias nsr='netstat -rn -f inet'
-alias pc='port contents'
-alias pl='port list'
 alias o=less
-alias scr="screen -r"
-alias scl="screen -list"
-alias scs="screen -t server -S "
-alias scss="screen -t cons;screen -t spec;screen -t git;"
 alias suww="sudo -u www"
 alias suwwb="sudo -u www -b"
-alias start_mysql="sudo -b -u mysql /opt/local/bin/mysqld_safe5"
-alias ogx="open -a GitX"
+
+###### screen
+alias scr="screen -r"
+alias scl="screen -list"
+alias scs="screen -S "
+alias phd="screen -r phd || job/phdstudy; screen -S phd"
 
 ###### These do not have to be
 ###### at the beginning of the command line.
@@ -73,16 +72,20 @@ alias -g T='|tail'
 alias -g F='|fgrep'
 
 
+###### this should be redone moved?
 ###### ruby
-alias ss="./script/server --debugger"
+alias ss="./script/server"
+alias ssd="./script/server --debugger"
 alias sg="./script/generate"
 alias sc="./script/console"
+alias sp="./script/plugin"
 alias sgm="./script/generate migration"
 alias rmig="rake db:migrate"
 alias rs="rake spec"
 alias rsm="rake spec:models"
 alias rsc="rake spec:controllers"
 alias sa="./script/autospec"
+alias saf="AUTOFEATURE=true autospec"
 alias s64gem='sudo env ARCHFLAGS="-arch x86_64" gem'
 
 ###### List only directories and symbolic
@@ -92,6 +95,9 @@ alias lsd='ls -ld *(-/DN)'
 ###### List only file beginning with "."
 alias lsa='ls -ld .*'
 
+###### Hosts
+alias edok='ssh edoktorand'
+alias fina='ssh fina'
 
 ###### Host-Specific stuff
 if [ -f ~/.zshrc-`hostname` ]; then
@@ -101,6 +107,8 @@ fi
 ###### History
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
+HIST_IGNORE_DUPS=true
+APPEND_HISTORY=true
 SAVEHIST=10000
  
 setopt HIST_IGNORE_DUPS
@@ -111,7 +119,7 @@ cdpath=(.. ~ ~/Projects)
 
 ###### Path addiction and exports
 path=(/opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin
-~/Application ~/bin $path)
+~/Application ~/bin ~/.gem/ruby/1.8/bin $path)
 manpath=($X11HOME/man /usr/man /usr/lang/man /usr/local/man /usr/share/man
 /opt/local/man)
 export MANPATH
@@ -258,3 +266,17 @@ zstyle ':completion:*:functions' ignored-patterns '_*'
 # can do whatever you want with this stuff. If we meet some day, and you think
 # this stuff is worth it, you can buy me a beer in return. 
 # Josef 'pepe' Pospisil
+
+# rvm-install added line:
+if [[ -s /Users/pepe/.rvm/scripts/rvm ]] ; then source /Users/pepe/.rvm/scripts/rvm ; fi
+
+# colfm
+if [[ -s /Users/pepe/Projects/fos/colfm/colfm.zsh ]] ; then source /Users/pepe/Projects/fos/colfm/colfm.zsh ; fi
+
+# -- start rip config -- #
+RIPDIR=/Users/pepe/.rip
+RUBYLIB="$RUBYLIB:$RIPDIR/active/lib"
+PATH="$PATH:$RIPDIR/active/bin"
+export RIPDIR RUBYLIB PATH
+# -- end rip config -- #
+
