@@ -62,7 +62,11 @@ alias suwwb="sudo -u www -b"
 alias scr="screen -r"
 alias scl="screen -list"
 alias scs="screen -S "
-alias phd="screen -r phd || job/phdstudy; screen -S phd"
+
+###### tmux
+alias tmr="tmux attach -t "
+alias tml="tmux ls"
+alias tms="tmux new -s "
 
 ###### These do not have to be
 ###### at the beginning of the command line.
