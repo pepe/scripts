@@ -1,6 +1,4 @@
 " pepe
-
-autocmd VimEnter * SessionList
 set guifont=AnonymousPro:h15.00
 colorscheme xoria256
 set columns=176

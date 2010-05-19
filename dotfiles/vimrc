@@ -80,31 +80,6 @@ nnoremap <silent> j gj
 inoremap <silent> <Up> <Esc>gka
 inoremap <silent> <Down> <Esc>gja
 
-let g:FuzzyFinderOptions = { 'Base':{}, 'Buffer':{}, 'File':{}, 'Dir':{}, 'MruFile':{}, 'MruCmd':{}, 'FavFile':{}, 'Tag':{}, 'TaggedFile':{}}
-let g:FuzzyFinderOptions.Base.ignore_case = 1
-let g:FuzzyFinderOptions.Base.abbrev_map  = {
-     \   '\C^VR' : [
-     \     '$VIMRUNTIME/**',
-     \     '~/.vim/**',
-     \     '$VIM/.vim/**',
-     \     '$VIM/vimfiles/**',
-     \   ],
-     \ }
-let g:FuzzyFinderOptions.MruFile.max_item = 200
-let g:FuzzyFinderOptions.MruCmd.max_item = 200
-nnoremap <silent> <C-n>      :FuzzyFinderBuffer<CR>
-nnoremap <silent> <C-m>      :FuzzyFinderFile <C-r>=expand('%:~:.')[:-1-len(expand('%:~:.:t'))]<CR><CR>
-nnoremap <silent> <C-j>      :FuzzyFinderMruFile<CR>
-nnoremap <silent> <C-k>      :FuzzyFinderMruCmd<CR>
-nnoremap <silent> <C-p>      :FuzzyFinderDir <C-r>=expand('%:p:~')[:-1-len(expand('%:p:~:t'))]<CR><CR>
-nnoremap <silent> <C-f><C-d> :FuzzyFinderDir<CR>
-nnoremap <silent> <C-f><C-f> :FuzzyFinderFavFile<CR>
-nnoremap <silent> <C-f><C-t> :FuzzyFinderTag!<CR>
-nnoremap <silent> <C-f><C-g> :FuzzyFinderTaggedFile<CR>
-noremap  <silent> g]         :FuzzyFinderTag! <C-r>=expand('<cword>')<CR><CR>
-nnoremap <silent> <C-f>F     :FuzzyFinderAddFavFile<CR>
-nnoremap <silent> <C-f><C-e> :FuzzyFinderEditInfo<CR>
-
 " javascript folding
 function! JavaScriptFold() 
     setl foldmethod=syntax
@@ -119,9 +94,12 @@ endfunction
 au FileType javascript call JavaScriptFold()
 au FileType javascript setl fen
 
+" LustFinder
+nnoremap <silent> <C-m>      :LustyFilesystemExplorerFromHere<CR>
+nnoremap <silent> <C-j>      :LustyBufferExplorer<CR>
 
 " THE BEER-WARE LICENSE" (Revision 42):
-" <pepe@gravastar.cz> wrote this file. As long as you retain this notice you
+" <josef.pospisil@laststar.eu> wrote this file. As long as you retain this notice you
 " can do whatever you want with this stuff. If we meet some day, and you think
 " this stuff is worth it, you can buy me a beer in return. 
 " Josef 'pepe' Pospisil
