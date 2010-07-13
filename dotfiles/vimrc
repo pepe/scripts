@@ -95,8 +95,8 @@ au FileType javascript call JavaScriptFold()
 au FileType javascript setl fen
 
 " LustFinder
-nnoremap <silent> <C-m>      :LustyFilesystemExplorerFromHere<CR>
-nnoremap <silent> <C-j>      :LustyBufferExplorer<CR>
+nnoremap <silent> <C-m>      :FufFileWithCurrentBufferDir<CR>
+nnoremap <silent> <C-j>      :FufBuffer<CR>
 
 " THE BEER-WARE LICENSE" (Revision 42):
 " <josef.pospisil@laststar.eu> wrote this file. As long as you retain this notice you
