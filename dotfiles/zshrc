@@ -88,7 +88,7 @@ alias rs="rake spec"
 alias rsm="rake spec:models"
 alias rsc="rake spec:controllers"
 alias sa="./script/autospec"
-alias saf="AUTOFEATURE=true autospec"
+alias saf="AUTOFEATURE=true autotest"
 alias s64gem='sudo env ARCHFLAGS="-arch x86_64" gem'
 alias bex='bundle exec'
 
@@ -154,6 +154,7 @@ for func in $^fpath/*(N-.x:t); autoload $func
 typeset -U path cdpath fpath manpath
 
 setopt promptsubst
+setopt shwordsplit
 
 # Load the prompt theme system
 autoload -U promptinit
