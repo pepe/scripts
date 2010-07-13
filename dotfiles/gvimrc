@@ -1,5 +1,5 @@
 " pepe
-set guifont=AnonymousPro:h15.00
+set guifont=Mensch:h13.0
 colorscheme xoria256
 set columns=176
 set lines=64
