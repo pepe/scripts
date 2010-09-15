@@ -1,0 +1,5 @@
+---
+- tab1:
+  - cd ~/Projects/job/prazske_jaro_website
+  - scr pj || scs pj
+  - gist

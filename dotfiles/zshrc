@@ -39,6 +39,12 @@ alias gista="git stash"
 alias gistap="git stash pop"
 alias gish="git show"
 
+###### Terminitor
+alias ter='terminitor'
+alias terst='terminitor start'
+alias terop='terminitor open'
+
+
 ###### Global aliases 
 alias mv='nocorrect mv'       # no spelling correction on mv
 alias cp='nocorrect cp'       # no spelling correction on cp

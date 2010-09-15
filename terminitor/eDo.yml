@@ -1,0 +1,6 @@
+---
+- tab1:
+  - cd ~/Projects/job/eDoktorand
+  - scr edo || scs edo
+  - gist
+

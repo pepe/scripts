@@ -18,6 +18,14 @@ task :install do
     puts 'Linking new one ' + source
     symlink source, target
   end
+  Dir['terminitor/*'].each do |source|
+    source = File.expand_path(source)
+    target = File.expand_path('~/.terminitor/' + File.basename(source))
+    puts 'Removing old terminitor ' + target
+    rm_f target
+    puts 'Linking new one ' + source
+    symlink source, target
+  end
 end
 
 # THE BEER-WARE LICENSE" (Revision 42):
