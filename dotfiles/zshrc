@@ -6,7 +6,7 @@ alias girema="git rebase master"
 alias girepe="git rebase pepe"
 alias gire="git rebase --continue"
 alias gita="git tag"
-alias gist="git status"
+alias gist="git status -sb"
 alias gica="git commit -a"
 alias gicam="git commit -am"
 alias gico="git commit"
@@ -14,7 +14,7 @@ alias giad="git add"
 alias gidi="git diff"
 alias gidich="git diff --cached"
 alias gips="git push"
-alias gipl="git pull"
+alias gipl="git pull --rebase"
 alias girm="git rm"
 alias gilo="git l"
 alias gilog="git l --graph"
@@ -48,7 +48,6 @@ alias pu=pushd
 alias po=popd
 alias d='dirs -v'
 alias h=history
-alias grep=egrep
 alias ll='ls -l'
 alias la='ls -a'
 alias lal='ls -al'
@@ -61,11 +60,6 @@ alias suwwb="sudo -u www -b"
 alias scr="screen -r"
 alias scl="screen -list"
 alias scs="screen -S "
-
-###### tmux
-alias tmr="tmux attach -t "
-alias tml="tmux ls"
-alias tms="tmux new -s "
 
 ###### These do not have to be
 ###### at the beginning of the command line.
@@ -103,11 +97,6 @@ alias lsa='ls -ld .*'
 alias edok='ssh edoktorand'
 alias fina='ssh fina'
 
-###### Host-Specific stuff
-if [ -f ~/.zshrc-`hostname` ]; then
-  . ~/.zshrc-`hostname`
-fi
-
 ###### History
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
@@ -129,14 +118,9 @@ manpath=($X11HOME/man /usr/man /usr/lang/man /usr/local/man /usr/share/man
 export MANPATH
 export EDITOR=vim
 export TERMCMD='xterm -rv -wc -132 -fn 10x20'
-export JAVA_HOME=/Library/Java/Home
-export ANT_HOME=/usr/local/ant
 export VISUALWORKS=/Users/pepe/vw7.6nc
 
 
-###### Grep source trees
-alias rbfin='find -type f -a \( -name "*.rb" -o -name "*.haml" \) | \
-              xargs grep '
 ###### Shell functions
 setenv() { typeset -x "${1}${1:+=}${(@)argv[2,$#]}" }  # csh compatibility
 freload() { while (( $# )); do; unfunction $1; autoload -U $1; shift; done }
@@ -265,6 +249,11 @@ zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.o' '*?.c~' \
 
 # ignore completion functions (until the _ignored completer)
 zstyle ':completion:*:functions' ignored-patterns '_*'
+
+###### Host-Specific stuff
+if [ -f ~/.zshrc-`hostname` ]; then
+  . ~/.zshrc-`hostname`
+fi
 
 # "THE BEER-WARE LICENSE" (Revision 42):
 # <josef.pospisil@laststar.eu> wrote this file. As long as you retain this notice you
