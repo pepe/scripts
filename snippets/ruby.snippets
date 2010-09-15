@@ -414,13 +414,13 @@ snippet tas
 	desc \"${1:Task description\}\"
 	task :${2:task_name => [:dependent, :tasks]} do
 		${3}
-		end
+	end
 snippet itsh
-	it "should ${1:be able}" do
+	it "${1}" do
 		${2}
 	end
 snippet itsp
-	it "should ${1:be able}"
+	it "${1}"
 snippet get
 	get '${1:/path}' do
 		${2}
@@ -431,12 +431,8 @@ snippet post
 	end
 snippet todo
 	#TODO ${1:what to do}
-snippet describe
-	describe "${1:Part}" do
+snippet descs
+	describe "${1}" do
 		${2}
-	end
-snippet factory
-	Factory.define :${1:model} do |$1|
-		$1.${2}
 	end
 end
