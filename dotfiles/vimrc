@@ -34,7 +34,7 @@ set hlsearch                    " hilight search
 set scrolloff=6
 set shortmess=atI
 set laststatus=2
-set statusline=@%{GitBranch()}\ %F%m%r%h%w\ %Y\ %03l,%03v\ %L
+set statusline=@\%{fugitive#statusline()}\ %F%m%r%h%w\ %Y\ %03l,%03v\ %L
 set number
 
 syntax on             " Enable syntax highlighting
@@ -67,6 +67,8 @@ nmap <C-s>r :SessionSave<CR>:SessionClose<CR>:SessionList<CR>/
 nmap <C-s>o :SessionList<CR>/
 nmap <C-s>w :SessionSave<CR>:SessionClose<CR>:q!<CR>
 imap jk <ESC>
+" Tags
+nnoremap <silent> <C-s>t :TlistToggle<CR>
 " Window movements; 
 nnoremap <M-Right> <C-W><Right>
 nnoremap <M-Left> <C-W><Left>
@@ -94,7 +96,7 @@ endfunction
 au FileType javascript call JavaScriptFold()
 au FileType javascript setl fen
 
-" LustFinder
+" FyzzyFinder
 nnoremap <silent> <C-m>      :FufFileWithCurrentBufferDir<CR>
 nnoremap <silent> <C-j>      :FufBuffer<CR>
 
