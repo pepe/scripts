@@ -1,51 +1,4 @@
-###### GIT
-alias gicl="git clone"
-alias gire="git rebase"
-alias girie="git rebase -i"
-alias girema="git rebase master"
-alias girepe="git rebase pepe"
-alias gire="git rebase --continue"
-alias gita="git tag"
-alias gist="git status -sb"
-alias gica="git commit -a"
-alias gicam="git commit -am"
-alias gico="git commit"
-alias giad="git add"
-alias gidi="git diff"
-alias gidich="git diff --cached"
-alias gips="git push"
-alias gipl="git pull --rebase"
-alias girm="git rm"
-alias gilo="git l"
-alias gilog="git l --graph"
-alias gimv="git mv"
-alias gibr="git branch"
-alias gibra="git branch -a"
-alias gich="git checkout"
-alias gichb="git checkout -b"
-alias gichma="git checkout master"
-alias gichpe="git checkout pepe"
-alias gichde="git checkout deploy"
-alias gime="git merge"
-alias gimepe="git merge pepe"
-alias gisqme="git merge --squash"
-alias girs="git reset"
-alias girshaard="git reset --hard"
-alias girss="git reset --soft"
-alias girsl="git reset --soft 'HEAD^'"
-alias gibl="git blame"
-alias gisb="git submodule"
-alias gista="git stash"
-alias gistap="git stash pop"
-alias gish="git show"
-
-###### Terminitor
-alias ter='terminitor'
-alias terst='terminitor start'
-alias terop='terminitor open'
-
-
-###### Global aliases 
+###### Global aliases
 alias mv='nocorrect mv'       # no spelling correction on mv
 alias cp='nocorrect cp'       # no spelling correction on cp
 alias mkdir='nocorrect mkdir' # no spelling correction on mkdir
@@ -61,38 +14,38 @@ alias nsr='netstat -rn -f inet'
 alias o=less
 alias suww="sudo -u www"
 alias suwwb="sudo -u www -b"
+alias finh='find . -name '
+alias d='dooby'
 
-###### screen
+##### Ruby
+alias bex='bundle exec'
+alias bexp='bundle exec padrino'
+alias bexr='bundle exec padrino rake'
+
+###### Screen
 alias scr="screen -r"
 alias scl="screen -list"
 alias scs="screen -S "
 
-###### These do not have to be
-###### at the beginning of the command line.
+###### Tmux
+alias t="term=screen-256color-bce tmux"
+alias tn='term=screen-256color-bce tmux new -s '
+alias ta='term=screen-256color-bce tmux a -t '
+alias tl='term=screen-256color-bce tmux ls'
+
+###### Dooby
+alias d='dooby'
+
+###### Git
+alias g='git'
+
+###### End of the line
 alias -g M='|less'
 alias -g H='|head'
 alias -g T='|tail'
 alias -g F='|fgrep'
 
-
-###### this should be redone moved?
-###### ruby
-alias ss="./script/server"
-alias ssd="./script/server --debugger"
-alias sg="./script/generate"
-alias sc="./script/console"
-alias sp="./script/plugin"
-alias sgm="./script/generate migration"
-alias rmig="rake db:migrate"
-alias rs="rake spec"
-alias rsm="rake spec:models"
-alias rsc="rake spec:controllers"
-alias sa="./script/autospec"
-alias saf="AUTOFEATURE=true autotest"
-alias s64gem='sudo env ARCHFLAGS="-arch x86_64" gem'
-alias bex='bundle exec'
-
-###### List only directories and symbolic
+##### List only directories and symbolic
 ###### links that point to directories
 alias lsd='ls -ld *(-/DN)'
 
@@ -109,23 +62,22 @@ HISTSIZE=10000
 HIST_IGNORE_DUPS=true
 APPEND_HISTORY=true
 SAVEHIST=10000
- 
+
 setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
- 
+
 ###### Search path for the cd command
 cdpath=(.. ~ ~/Projects)
 
 ###### Path addiction and exports
 path=(/opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin
-~/Application ~/bin ~/.gem/ruby/1.8/bin $path)
+~/Application ~/bin ~/.gem/ruby/1.8/bin ~/node_modules/.bin $path)
 manpath=($X11HOME/man /usr/man /usr/lang/man /usr/local/man /usr/share/man
 /opt/local/man)
 export MANPATH
 export EDITOR=vim
 export TERMCMD='xterm -rv -wc -132 -fn 10x20'
-export VISUALWORKS=/Users/pepe/vw7.6nc
-
+export NODE_PATH='/usr/local/lib/node_modules'
 
 ###### Shell functions
 setenv() { typeset -x "${1}${1:+=}${(@)argv[2,$#]}" }  # csh compatibility
@@ -215,7 +167,6 @@ limit -s
 
 umask 022
 
-
 # Completion Styles
 
 # list of completers to use
@@ -224,7 +175,7 @@ zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
 # allow one error for every three characters typed in approximate completer
 zstyle -e ':completion:*:approximate:*' max-errors \
     'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) numeric )'
-    
+
 # insert all expansions for expand completer
 zstyle ':completion:*:expand:*' tag-order all-expansions
 
@@ -264,12 +215,12 @@ fi
 # "THE BEER-WARE LICENSE" (Revision 42):
 # <josef.pospisil@laststar.eu> wrote this file. As long as you retain this notice you
 # can do whatever you want with this stuff. If we meet some day, and you think
-# this stuff is worth it, you can buy me a beer in return. 
+# this stuff is worth it, you can buy me a beer in return.
 # Josef 'pepe' Pospisil
 
 # rvm-install added line:
-if [[ -s /Users/pepe/.rvm/scripts/rvm ]] ; then source /Users/pepe/.rvm/scripts/rvm ; fi
 
 # colfm
 if [[ -s /Users/pepe/Projects/fos/colfm/colfm.zsh ]] ; then source /Users/pepe/Projects/fos/colfm/colfm.zsh ; fi
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

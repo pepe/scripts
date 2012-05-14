@@ -1,25 +1,44 @@
 [user]
-  name = Josef Pospíšil
+  name = Josef Pospíšil
   email = josef.pospisil@laststar.eu
 [color]
   ui = always
   diff = auto
-  status = always
+  status = auto
   branch = auto
   interactive = auto
 [alias]
   s = status
-  c = commit -a
+  c = commit -am
   l = log --pretty=format:'%Cred%h%Creset ▹ %Cgreen%s%Creset       [%ar by %an]'
   b = branch
-  out = log origin..HEAD
+  d = diff
+  o = checkout
+  m = merge
+  a = add
+  cm = commit -m
+  sw = show
+  om = checkout master
+  ob = checkout -b
+  up = push
+  dw = pull
+  sh = stash
+  mm = merge master
+  tom = rebase master
+  toc = rebase --continue
+  tos = rebase --skip
+  rmb = branch -d
+  shpo = stash pop
+  shli = stash list
+  shsh = stash show -p
+  last = log -1 HEAD
 [core]
-    excludesfile = /Users/{YOUR USERNAME}/.gitignore
+  excludesfile = /Users/pepe/.gitignore
 [merge]
-    stat = true
+  stat = true
 [github]
-	token = 54a312287902da47829c7c5329a087c1
-	user = pepe
+  token = 54a312287902da47829c7c5329a087c1
+  user = pepe
 [push]
   default = matching
 
