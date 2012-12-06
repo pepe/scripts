@@ -1,107 +1,6 @@
-set exrc              " Enable .vimrc .gvimrc
-set nocompatible      " We're running Vim, not Vi!
-set cmdheight=2
-set fen               " Folding enabled
-set fdm=syntax        " Fold mode to syntax
-set fdc=3             " 3 fold columns
-set foldtext=getline(v:foldstart)
-set wrap		
-set history=1000      " Size of the history
-set backspace=indent,eol,start
-set autoread
-set nojoinspaces
-set magic             " Use some magic in search patterns?  Certainly!
-set ruler
-set showcmd                     " Show current uncompleted command?  Absolutely!
-set showmatch                   " Show the matching bracket for the last ')'?
-set showmode                    " Show the current mode?  YEEEEEEEEESSSSSSSSSSS!
-set hlsearch
-set autoindent
-set shiftwidth=2
-set tabstop=2
-set expandtab
-set textwidth=80
-set wildmenu
-set ls=2
-set nohlsearch
-set directory=/tmp
-set encoding=utf-8
-set wildmode=list:longest,full
-set ignorecase 
-set smartcase
-set incsearch                   " Incremental search
-set hlsearch                    " hilight search
-set scrolloff=6
-set shortmess=atI
-set laststatus=2
-set statusline=@\%{fugitive#statusline()}\ %F%m%r%h%w\ %Y\ %03l,%03v\ %L
-set number
+set nocompatible               " be iMproved
 
-syntax on             " Enable syntax highlighting
-filetype on           " Enable fieltype detection
-filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific plugins
+call pathogen#infect()
 
-compiler rubyunit
-nmap <Leader>fd :cf /tmp/autotest.txt<cr> :compiler rubyunit<cr>
-cmap w!! %!sudo tee > /dev/null %
+source ~/.vim/local.vim
 
-nnoremap ' `
-nnoremap ` '
-noremap <silent> <c-l> :nohls<cr><c-l>
-
-map <TAB> za
-imap r <%  %>F%hi
-map r i<%  %>F%hi
-imap p <%=  %>F%hi
-map p i<%=  %>F%hi
-imap h <%=h  %>F%hi
-map h i<%=h  %>F%hi
-imap g _('')F'i
-map g i_('')F'i
-imap n o 
-map n o '
-" Sessions
-noremap <silent> <C-s> :wa<CR>:SessionSave<CR>
-nmap <C-s>r :SessionSave<CR>:SessionClose<CR>:SessionList<CR>/
-nmap <C-s>o :SessionList<CR>/
-nmap <C-s>w :SessionSave<CR>:SessionClose<CR>:q!<CR>
-imap jk <ESC>
-" Tags
-nnoremap <silent> <C-s>t :TlistToggle<CR>
-" Window movements; 
-nnoremap <M-Right> <C-W><Right>
-nnoremap <M-Left> <C-W><Left>
-nnoremap <M-Up> <C-W><Up>
-nnoremap <M-Down> <C-W><Down>
-inoremap <expr> <c-n> pumvisible() ? "\<lt>c-n>" : "\<lt>c-n>\<lt>c-r>=pumvisible() ? \"\\<lt>down>\" : \"\"\<lt>cr>"
-inoremap <expr> <m-;> pumvisible() ? "\<lt>c-n>" : "\<lt>c-x>\<lt>c-o>\<lt>c-n>\<lt>c-p>\<lt>c-r>=pumvisible() ? \"\\<lt>down>\" : \"\"\<lt>cr>"
-" Not by whole lines
-nnoremap <silent> k gk
-nnoremap <silent> j gj
-inoremap <silent> <Up> <Esc>gka
-inoremap <silent> <Down> <Esc>gja
-
-" javascript folding
-function! JavaScriptFold() 
-    setl foldmethod=syntax
-    setl foldlevelstart=1
-    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
-
-    function! FoldText()
-        return substitute(getline(v:foldstart), '{.*', '{...}', '')
-    endfunction
-    setl foldtext=FoldText()
-endfunction
-au FileType javascript call JavaScriptFold()
-au FileType javascript setl fen
-
-" FyzzyFinder
-nnoremap <silent> <C-m>      :FufFileWithCurrentBufferDir<CR>
-nnoremap <silent> <C-j>      :FufBuffer<CR>
-
-" THE BEER-WARE LICENSE" (Revision 42):
-" <josef.pospisil@laststar.eu> wrote this file. As long as you retain this notice you
-" can do whatever you want with this stuff. If we meet some day, and you think
-" this stuff is worth it, you can buy me a beer in return. 
-" Josef 'pepe' Pospisil

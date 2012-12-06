@@ -1,5 +1,5 @@
 [user]
-  name = Josef Pospíšil
+	name = Josef Pospíšil
   email = josef.pospisil@laststar.eu
 [color]
   ui = always
@@ -9,14 +9,16 @@
   interactive = auto
 [alias]
   s = status
-  c = commit -am
+  c = commit -a
   l = log --pretty=format:'%Cred%h%Creset ▹ %Cgreen%s%Creset       [%ar by %an]'
   b = branch
   d = diff
   o = checkout
   m = merge
   a = add
-  cm = commit -m
+  ci = commit
+  ca = commit --amend
+  cm = commit -am
   sw = show
   om = checkout master
   ob = checkout -b
@@ -24,6 +26,8 @@
   dw = pull
   sh = stash
   mm = merge master
+  ap = add --patch
+  dc = diff --cached
   tom = rebase master
   toc = rebase --continue
   tos = rebase --skip
@@ -42,3 +46,5 @@
 [push]
   default = matching
 
+[ghi]
+	token = bf957b662f4f437e2bbb39698c9fc474f39b8078
