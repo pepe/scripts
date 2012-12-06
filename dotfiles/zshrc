@@ -25,11 +25,6 @@ alias bexr='bundle exec padrino rake'
 alias rspec='nocorrect rspec'
 alias bundle='nocorrect bundle'
 
-###### Screen
-alias scr="screen -r"
-alias scl="screen -list"
-alias scs="screen -S "
-
 ###### Tmux
 alias t="term=screen-256color-bce tmux"
 alias tn='term=screen-256color-bce tmux new -s '
