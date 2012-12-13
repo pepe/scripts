@@ -1,4 +1,4 @@
-task default: ['install:dotfiles']
+task :default => ['install:dotfiles']
 
 namespace :install do
   desc "Install dotfiles"
