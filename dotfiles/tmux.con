@@ -1,0 +1,138 @@
+# Thayer Williams (http://cinderwick.ca)
+# "Feel free to do whatever you like with it."
+
+# vi-style controls for copy mode
+setw -g mode-keys vi
+
+# set prefix key to ctrl+a until I have time to adapt
+unbind C-b
+set -g prefix C-a
+
+# send the prefix to client inside window (ala nested sessions)
+bind-key a send-prefix
+
+# toggle last window like screen
+bind-key C-a last-window
+unbind Space
+bind-key Space next-window
+
+# confirm before killing a window or the server
+bind-key K confirm kill-window
+
+# split window with new slim terminal
+bind-key t split-window -h -l 80
+
+# toggle statusbar
+bind-key b set-option status
+
+# ctrl+left/right cycles thru windows
+bind-key -n C-right next
+bind-key -n C-left prev
+
+# open a man page in new window
+bind / command-prompt "split-window 'exec man %%'"
+
+# quick view of processes
+bind '~' split-window "exec htop"
+
+# scrollback buffer n lines
+set -g history-limit 5000
+
+# listen for activity on all windows
+set -g bell-action any
+
+# on-screen time for display-panes in ms
+set -g display-panes-time 2000
+
+# start window indexing at one instead of zero
+set -g base-index 1
+
+# enable wm window titles
+set -g set-titles on
+
+# wm window title string (uses statusbar variables)
+set -g set-titles-string "tmux.#I.#W"
+
+# statusbar --------------------------------------------------------------
+set -g display-time 2000
+
+# command/message line colors
+set -g message-fg white
+set -g message-bg black
+set -g message-attr bright
+
+# default statusbar colors
+set -g status-fg white
+set -g status-bg default
+
+# # default window title colors
+set-window-option -g window-status-fg white
+set-window-option -g window-status-bg default
+set-window-option -g window-status-attr dim
+
+# # active window title colors
+set-window-option -g window-status-current-fg white
+set-window-option -g window-status-current-bg default
+set-window-option -g window-status-current-attr bright
+
+# vim's definition of a horizontal/vertical split is reversed from tmux's
+bind s split-window -v
+bind v split-window -h
+
+# move in windows like in vim
+unbind l
+bind j select-pane -D
+bind k select-pane -U
+bind h select-pane -L
+bind l select-pane -R
+
+# resize panes like vim
+# feel free to change the "1" to however many lines you want to resize by, only
+# one at a time can be slow
+bind < resize-pane -L 1
+bind > resize-pane -R 1
+bind - resize-pane -D 1
+bind + resize-pane -U 1
+
+# bind : to command-prompt like vim
+# this is the default in tmux already
+bind : command-prompt
+
+# I do want mouse
+set -g mode-mouse on
+set-option -g mouse-select-pane on
+
+# and colors
+set -g default-terminal "screen-256color"
+
+#--Status-Bar-------------------------------------------------------------------
+## Default colors
+set -g status-bg black
+set -g status-fg white
+
+
+# Copying
+set -g default-command "reattach-to-user-namespace -l zsh"
+
+set -g mode-mouse on
+setw -g mouse-select-window on
+setw -g mouse-select-pane on
+
+# Copy mode
+setw -g mode-keys vi
+bind ` copy-mode
+unbind [
+bind -t vi-copy v begin-selection
+bind -t vi-copy y copy-selection
+bind -t vi-copy Escape cancel
+bind y run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
+
+# tmux-powerline
+set-option -g status on
+set-option -g status-interval 2
+set-option -g status-utf8 on
+set-option -g status-justify "centre"
+set-option -g status-left-length 60
+set-option -g status-right-length 90
+set-option -g status-left "#(~/Projects/fos/tmux-powerline/status-left.sh)"
+set-option -g status-right "#(~/Projects/fos/tmux-powerline/status-right.sh)"
