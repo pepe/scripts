@@ -19,9 +19,12 @@ nnoremap <silent> <Leader>rz :e ~/.zshrc <CR>
 " Tabs
 nnoremap <Leader>j :tabprev<CR>
 nnoremap <Leader>k :tabnext<CR>
+nnoremap <Leader>k :tabnext<CR>
+nnoremap <Leader>n :tabnew<CR>
 
 " Quickfix
-nnoremap <Leader>n :cn<CR>
+nnoremap <Leader>cn :cn<CR>
+nnoremap <Leader>cp :cp<CR>
 
 " Duplication
 vnoremap <silent> <Leader>= yP
@@ -37,6 +40,7 @@ nnoremap <silent> <Leader>up :wa<CR> :call Send_to_Tmux("bundle exec cucumber ".
 nnoremap <silent> <Leader>tt :wa<CR> :call Send_to_Tmux("bundle exec rspec ".expand("%")."\n")<CR>
 nnoremap <silent> <Leader>tl :wa<CR> :call Send_to_Tmux("bundle exec rspec ".expand("%").":".line(".")."\n")<CR>
 nnoremap <silent> <Leader>ts :wa<CR> :call Send_to_Tmux("bundle exec rspec spec\n")<CR>
+nnoremap <silent> <Leader>tm :wa<CR> :call Send_to_Tmux("bundle exec rspec spec/models\n")<CR>
 nnoremap <silent> <Leader>tp :wa<CR> :call Send_to_Tmux("bundle exec rspec ".expand("%:h")."\n")<CR>
 "last
 nnoremap <silent> <Leader>l :wa<CR> :call Send_to_Tmux("!! \n")<CR>
