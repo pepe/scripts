@@ -16,6 +16,7 @@
   o = checkout
   m = merge
   a = add
+  f = flow
   ci = commit
   ca = commit --amend
   cm = commit -am
@@ -28,10 +29,13 @@
   mm = merge master
   ap = add --patch
   dc = diff --cached
+  to = rebase
+  ff = flow feature
   tom = rebase master
   toc = rebase --continue
   tos = rebase --skip
   rmb = branch -d
+  ffs = flow feature start
   shpo = stash pop
   shli = stash list
   shsh = stash show -p
