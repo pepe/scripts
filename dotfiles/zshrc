@@ -31,11 +31,13 @@ alias tn='term=screen-256color-bce tmux new -s '
 alias ta='term=screen-256color-bce tmux a -t '
 alias tl='term=screen-256color-bce tmux ls'
 
-###### Dooby
-alias d='dooby'
-
 ###### Git
 alias g='nocorrect git'
+
+##### Mosh
+alias m='mosh'
+alias med='mosh edoktorand.czu.cz'
+alias mlit='mosh litery'
 
 ###### End of the line
 alias -g M='|less'
@@ -50,10 +52,6 @@ alias lsd='ls -ld *(-/DN)'
 ###### List only file beginning with "."
 alias lsa='ls -ld .*'
 
-###### Hosts
-alias edok='ssh edoktorand'
-alias fina='ssh fina'
-
 ###### History
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
@@ -65,7 +63,7 @@ setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
 
 ###### Search path for the cd command
-cdpath=(.. ~ ~/Projects)
+cdpath=(. .. ~ ~/Projects)
 
 ###### Path addiction and exports
 path=(/opt/local/bin /opt/local/sbin /usr/local/bin /usr/local/sbin
@@ -212,6 +210,9 @@ zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.o' '*?.c~' \
 # ignore completion functions (until the _ignored completer)
 zstyle ':completion:*:functions' ignored-patterns '_*'
 
+# known hosts
+zstyle -e ':completion::*:*:*:hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
+
 ###### Host-Specific stuff
 if [ -f ~/.zshrc-`hostname` ]; then
   . ~/.zshrc-`hostname`
@@ -230,3 +231,8 @@ fi
 # rvm-install added line:
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Tmuxinator
+
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
