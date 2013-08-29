@@ -27,6 +27,7 @@ set wildignore+=*.o,*.obj,.git,*.rbc
 " Status bar
 set laststatus=2
 
+" Assorted
 set autoread
 set showmatch                   " Show the matching bracket for the last ')'?
 set matchtime=5  " Bracket blinking.
@@ -43,7 +44,7 @@ set statusline=@\%{fugitive#statusline()}\ %F%m%r%h%w\ %Y\ %03l,%03v\ %L
 set encoding=utf-8
 set directory=/tmp
 set history=256
-set timeoutlen=250
+set timeoutlen=400
 
 "-- folding
 set foldenable " Turn on folding

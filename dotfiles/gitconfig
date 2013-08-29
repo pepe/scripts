@@ -10,7 +10,7 @@
 [alias]
   s = status
   c = commit -a
-  l = log --pretty=format:'%Cred%h%Creset ▹ %Cgreen%s%Creset       [%ar by %an]'
+  l = log --no-merges --pretty=format:'%Cred%h%Creset ▹ %Cgreen%s%Creset       [%ar by %an]'
   b = branch
   d = diff
   o = checkout
@@ -22,6 +22,7 @@
   cm = commit -am
   sw = show
   om = checkout master
+  od = checkout develop
   ob = checkout -b
   up = push
   dw = pull
@@ -31,11 +32,19 @@
   dc = diff --cached
   to = rebase
   ff = flow feature
+  fh = flow hotfix
+  fr = flow release
   tom = rebase master
+  tod = rebase develop
   toc = rebase --continue
   tos = rebase --skip
   rmb = branch -d
   ffs = flow feature start
+  fff = flow feature finish
+  fhs = flow hotfix start
+  fhf = flow hotfix finish
+  frs = flow release start
+  frf = flow release finish
   shpo = stash pop
   shli = stash list
   shsh = stash show -p
@@ -49,6 +58,8 @@
   user = pepe
 [push]
   default = matching
+[log]
+  no-merges = true
 
 [ghi]
 	token = bf957b662f4f437e2bbb39698c9fc474f39b8078

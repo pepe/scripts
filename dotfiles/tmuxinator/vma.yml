@@ -1,0 +1,14 @@
+# ~/.tmuxinator/vma.yml
+# you can make as many tabs as you wish...
+
+project_name: Vila Martin
+project_root: ~/Projects/fun/vilamartin.cz
+rvm: 2.0.0@vilamartin
+tabs:
+  - git:
+  - editor: vim
+  - shell:
+    layout: even-vertical
+    panes:
+      - serve
+      - compass watch

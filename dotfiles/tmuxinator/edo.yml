@@ -1,0 +1,15 @@
+# ~/.tmuxinator/sct.yml
+# you can make as many tabs as you wish...
+
+project_name: Edoktorand
+project_root: ~/Projects/fun/eDoktorand
+rvm: ree@rails2
+tabs:
+  - git:
+  - editor: vim
+  - shell:
+      layout: main-vertical
+      panes:
+        -
+        - ./script/server
+        - ./script/console

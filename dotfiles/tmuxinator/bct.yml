@@ -1,0 +1,20 @@
+# ~/.tmuxinator/bct.yml
+# you can make as many tabs as you wish...
+
+project_name: Briefcase Type Foundry
+project_root: ~/Projects/fun/briefcasetype.com
+rvm: 1.9.3@briefcasetype.com
+tabs:
+  - git:
+  - editor: vim
+  - shell:
+      layout: main-vertical
+      panes:
+        -
+        - bexp start -p 3002
+        - bexp console
+  - spork:
+      layout: even-vertical
+      panes:
+        - spork
+        - spork cucu

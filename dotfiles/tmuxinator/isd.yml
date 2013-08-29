@@ -1,0 +1,10 @@
+# ~/.tmuxinator/isd.yml
+# you can make as many tabs as you wish...
+
+project_name: Isdoc
+project_root: ~/Projects/fun/faktury/isdoc
+rvm: 1.9.3@isdoc
+tabs:
+  - git:
+  - editor: vim
+  - shell:

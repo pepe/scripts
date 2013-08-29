@@ -1,0 +1,20 @@
+# ~/.tmuxinator/sct.yml
+# you can make as many tabs as you wish...
+
+project_name: SuitcaseType Foundry
+project_root: ~/Projects/fun/suitcasetype.com
+rvm: 1.9.3@suitcasetype.com
+tabs:
+  - git:
+  - editor: vim
+  - shell:
+      layout: main-vertical
+      panes:
+        -
+        - bexp start -p 3001
+        - bexp console
+  - spork:
+      layout: even-vertical
+      panes:
+        - spork
+        - spork cucu

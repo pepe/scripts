@@ -52,6 +52,9 @@ alias lsd='ls -ld *(-/DN)'
 ###### List only file beginning with "."
 alias lsa='ls -ld .*'
 
+###### Serve current dir
+alias serve='ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 9090, :DocumentRoot => Dir.pwd); trap(%(INT)) { s.shutdown }; s.start"'
+
 ###### History
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000

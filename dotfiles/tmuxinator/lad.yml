@@ -1,0 +1,14 @@
+# ~/.tmuxinator/lad.yml
+# you can make as many tabs as you wish...
+
+project_name: Ladislav
+project_root: ~/Projects/fun/ladislav.suitcasetype.com
+rvm: 2.0.0@ladislav
+tabs:
+  - git:
+  - editor: vim
+  - shell:
+    layout: even-vertical
+    panes:
+      - serve
+      - compass watch

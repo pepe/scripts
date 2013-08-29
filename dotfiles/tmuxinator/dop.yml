@@ -1,0 +1,10 @@
+# ~/.tmuxinator/dop.yml
+# you can make as many tabs as you wish...
+
+project_name: DopisOnline
+project_root: ~/Projects/fun/faktury/dopis_online_client
+rvm: 1.9.3@dop
+tabs:
+  - git:
+  - editor: vim
+  - shell:

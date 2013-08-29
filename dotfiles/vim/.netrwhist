@@ -1,2 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/pepe/Projects/fun/suitcasetype.com/admin/views/layouts'
+let g:netrw_dirhist_2='/Users/pepe/Projects/fun/eDoktorand/lib'
+let g:netrw_dirhist_3='/Users/pepe/Projects/fun/eDoktorand/lib/service_tools'
+let g:netrw_dirhist_4='/Users/pepe/Projects/fun/eDoktorand/lib'
+let g:netrw_dirhist_5='/Users/pepe/.tmuxinator'
+let g:netrw_dirhist_6='/Users/pepe/Projects/fun/faktury/isdoc_renderer/spec/fixtures'
+let g:netrw_dirhist_7='/Users/pepe/Projects/fun/eDoktorand/app/models'

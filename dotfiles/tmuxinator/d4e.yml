@@ -1,0 +1,15 @@
+# ~/.tmuxinator/d4e.yml
+# you can make as many tabs as you wish...
+
+project_name: Docs4ever
+project_root: ~/Projects/fun/faktury/docs4ever
+rvm:  ruby-1.9.3-p327@docs4ever
+tabs:
+  - git:
+  - editor: vim
+  - shell:
+      layout: main-vertical
+      panes:
+        -
+        - bexp start -p3004
+        - bexp console
